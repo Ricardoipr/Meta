@@ -1,3 +1,5 @@
+import random
+
 def read_cnf_file(filename):
     """
     Used to read the CNF file and extract the necessary data.
@@ -36,17 +38,16 @@ def read_cnf_file(filename):
 
 def hillclimb(num_variables, num_clauses, clauses):
 
-    first_clause = [num_variables]
+    initial_possibility = [random.choice([0,1]) for _ in range(num_variables)]
 
-    for clause in clauses:
-        for literal in clause:
-            # var = abs(literal) - 1
-            print(clause)
-            print(literal)
-            # print(var)
-            # return 1,2,3
-        
-    print(first_clause)    
+    for value in initial_possibility:
+        print(initial_possibility[value])   
+        # var = abs(literal) - 1
+        # if (literal > 0 and clauses[var] == 1):
+        #     return 1
+        # if (literal < 0 and clauses[var] == 0):
+        #     return 0
+
     return 1, 2, 3
 
 def convert_to_boolean(assignment):
