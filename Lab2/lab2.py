@@ -1,9 +1,10 @@
+from itertools import combinations
 import random
 import re
 import time
 
-global_runs = 30
-global_max_evaluations = 200000
+max_runs = 30
+max_evaluations = 200000
 
 def read_cnf_file(filename):
     """
@@ -65,9 +66,9 @@ def clause_counter(possibility, clauses):
 
     return clauses_satisfied    
 
-def hillclimb(num_variables, clauses):
+def hillclimb(num_variables, clauses, variable_neighbourhood):
     """
-    Implements the Next Ascent Hillclimbing algorithm.
+    Implements the Hillclimbing algorithm.
     Starts with a random assignment of variables, evaluates neighbors, and 
     continues improving until no better neighbor is found.
     """
@@ -76,28 +77,39 @@ def hillclimb(num_variables, clauses):
     start_time = time.time()
 
     satisfied_clauses = clause_counter(current_possibility, clauses)
+    max_hamming_distance = 3 if variable_neighbourhood else 1
+    hamming_distance = 1
 
     while True:
         improved = False
-        order = random.sample(range(num_variables), num_variables)
 
-        for index in order:
-            neighbour_possibility = current_possibility.copy()
-            neighbour_possibility[index] = 1 - current_possibility[index]
-            neighbour_clauses = clause_counter(neighbour_possibility, clauses)
-            function_evaluations +=1
+        for hamming_distance in range(1, max_hamming_distance + 1):
+            order = random.sample(range(num_variables), num_variables)
 
-            if(neighbour_clauses > satisfied_clauses):
-                current_possibility = neighbour_possibility
-                satisfied_clauses = neighbour_clauses
-                improved = True
+            for indexes in random.sample(list(combinations(order, hamming_distance)), len(order)):
+                neighbour_possibility = current_possibility.copy()
+
+                for index in indexes:
+                    neighbour_possibility[index] = 1 - current_possibility[index]
+                
+                neighbour_clauses = clause_counter(neighbour_possibility, clauses)
+                function_evaluations +=1
+
+                if(neighbour_clauses > satisfied_clauses):
+                    current_possibility = neighbour_possibility
+                    satisfied_clauses = neighbour_clauses
+                    improved = True
+                    break
+
+            if improved:
                 break
+
         if not improved:
-            break   
+            break
 
     return current_possibility, satisfied_clauses, function_evaluations, time.time()-start_time
 
-def neighbourhood_checker(num_variables, clauses):
+def neighbourhood_checker(num_variables, clauses, variable_neighbourhood):
     """
     Runs the hillclimb algorithm multiple times and tracks the best result across the runs.
     """
@@ -106,8 +118,8 @@ def neighbourhood_checker(num_variables, clauses):
     best_time = 0
     best_solution = []
 
-    for _ in range(global_runs):
-        current_solution, satisfied_clauses, function_evaluations, cpu_time= hillclimb(num_variables, clauses)
+    for _ in range(max_runs):
+        current_solution, satisfied_clauses, function_evaluations, cpu_time= hillclimb(num_variables, clauses, variable_neighbourhood)
         if satisfied_clauses > best_clauses:
             best_clauses = satisfied_clauses
             best_function_evaluations = function_evaluations
@@ -116,7 +128,7 @@ def neighbourhood_checker(num_variables, clauses):
 
     return best_solution, best_clauses, best_function_evaluations, best_time
 
-def multistart_neighbourhood_checker(num_variables, num_clauses, clauses):
+def multistart_neighbourhood_checker(num_variables, num_clauses, clauses, variable_neighbourhood):
     """
     Runs the multistart hillclimb algorithm multiple times and tracks the best result across the runs.
     """
@@ -126,8 +138,8 @@ def multistart_neighbourhood_checker(num_variables, num_clauses, clauses):
     best_time = 0
     best_solution = []
 
-    while best_multistart_clauses != num_clauses and function_counter <= global_max_evaluations:
-        current_best_solution, current_best_satisfied_clauses, current_best_function_evaluations, current_best_cpu_time = neighbourhood_checker(num_variables, clauses)
+    while best_multistart_clauses != num_clauses and function_counter <= max_evaluations:
+        current_best_solution, current_best_satisfied_clauses, current_best_function_evaluations, current_best_cpu_time = neighbourhood_checker(num_variables, clauses, variable_neighbourhood)
         if current_best_satisfied_clauses > best_multistart_clauses:
             best_multistart_clauses = current_best_satisfied_clauses
             best_function_evaluations = current_best_function_evaluations
@@ -147,19 +159,29 @@ def convert_to_boolean(assignment):
 def main():
     
     print("Chose one of the algorithms below to execute:")
-    option = input("A - Next Ascent Hillclimbing\nB - Multistart Next Ascent Hillclimbing\n")
+    option = input("A - Next Ascent Hillclimbing\nB - Multistart Next Ascent Hillclimbing\nC - Variable Neighbourhood Ascent\nD - Multistart Variable Neighbourhood Ascent\n")
 
-    if re.match("^[AB]$", option):
+    if re.match("^[ABCD]$", option):
         filename = input('Enter file name: \n')
         num_variables, num_clauses, clauses = read_cnf_file(filename)
         if num_variables is None or clauses is None:
             return
         
         if option == 'A':
-            best_solution, best_clauses, best_function_evaluations, best_time = neighbourhood_checker(num_variables, clauses)
+            variable_neighbourhood = False
+            best_solution, best_clauses, best_function_evaluations, best_time = neighbourhood_checker(num_variables, clauses, variable_neighbourhood)
         
         elif option == 'B':
-            best_solution, best_clauses, best_function_evaluations, best_time = multistart_neighbourhood_checker(num_variables, num_clauses, clauses)
+            variable_neighbourhood = False
+            best_solution, best_clauses, best_function_evaluations, best_time = multistart_neighbourhood_checker(num_variables, num_clauses, clauses, variable_neighbourhood)
+
+        elif option == 'C':
+            variable_neighbourhood = True
+            best_solution, best_clauses, best_function_evaluations, best_time = neighbourhood_checker(num_variables, clauses, variable_neighbourhood)
+
+        elif option == 'D':
+            variable_neighbourhood = True
+            best_solution, best_clauses, best_function_evaluations, best_time = multistart_neighbourhood_checker(num_variables, num_clauses, clauses, variable_neighbourhood)
         
         boolean_result = convert_to_boolean(best_solution)
         print(f"The best solution found was: {boolean_result}")
