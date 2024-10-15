@@ -73,9 +73,9 @@ def hillclimb(num_variables, clauses, variable_neighbourhood):
     continues improving until no better neighbor is found.
     """
     current_possibility = [random.choice([0,1]) for _ in range(num_variables)]
+    first_possibility = current_possibility
     function_evaluations = 0
     start_time = time.time()
-
     satisfied_clauses = clause_counter(current_possibility, clauses)
     max_hamming_distance = 3 if variable_neighbourhood else 1
     hamming_distance = 1
@@ -107,7 +107,7 @@ def hillclimb(num_variables, clauses, variable_neighbourhood):
         if not improved:
             break
 
-    return current_possibility, satisfied_clauses, function_evaluations, time.time()-start_time
+    return current_possibility, satisfied_clauses, function_evaluations, time.time()-start_time, first_possibility
 
 def neighbourhood_checker(num_variables, clauses, variable_neighbourhood):
     """
@@ -119,14 +119,15 @@ def neighbourhood_checker(num_variables, clauses, variable_neighbourhood):
     best_solution = []
 
     for _ in range(max_runs):
-        current_solution, satisfied_clauses, function_evaluations, cpu_time= hillclimb(num_variables, clauses, variable_neighbourhood)
+        current_solution, satisfied_clauses, function_evaluations, cpu_time, first_possibility = hillclimb(num_variables, clauses, variable_neighbourhood)
+        
         if satisfied_clauses > best_clauses:
             best_clauses = satisfied_clauses
             best_function_evaluations = function_evaluations
             best_solution = current_solution
             best_time = cpu_time
 
-    return best_solution, best_clauses, best_function_evaluations, best_time
+    return best_solution, best_clauses, best_function_evaluations, best_time, first_possibility
 
 def multistart_neighbourhood_checker(num_variables, num_clauses, clauses, variable_neighbourhood):
     """
@@ -138,16 +139,29 @@ def multistart_neighbourhood_checker(num_variables, num_clauses, clauses, variab
     best_time = 0
     best_solution = []
 
-    while best_multistart_clauses != num_clauses and function_counter <= max_evaluations:
-        current_best_solution, current_best_satisfied_clauses, current_best_function_evaluations, current_best_cpu_time = neighbourhood_checker(num_variables, clauses, variable_neighbourhood)
+    while function_counter <= max_evaluations:
+        current_best_solution, current_best_satisfied_clauses, current_best_function_evaluations, current_best_cpu_time, first_possibility = neighbourhood_checker(num_variables, clauses, variable_neighbourhood)
+        
         if current_best_satisfied_clauses > best_multistart_clauses:
             best_multistart_clauses = current_best_satisfied_clauses
-            best_function_evaluations = current_best_function_evaluations
+            best_function_evaluations = function_counter + current_best_function_evaluations
             best_solution = current_best_solution
             best_time = current_best_cpu_time
+
         function_counter += current_best_function_evaluations
-        print(function_counter)
+
+        if best_multistart_clauses == num_clauses :
+            break
     
+
+        print(f"Evaluations so far: {function_counter}")
+        print(f"Clauses to satisfy: {num_clauses}")
+        print(f"Most clauses satisfied so far:¨ {best_multistart_clauses}")
+        print(f"Previous best number of satisfied clauses: {current_best_satisfied_clauses}")
+        print(f"Current most satisfying possibility: {best_solution}")
+        print(f"The first possibility was: {first_possibility}")
+        print("----------------------------")
+            
     return best_solution, best_multistart_clauses, best_function_evaluations, best_time
 
 def convert_to_boolean(assignment):
