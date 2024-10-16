@@ -160,7 +160,7 @@ def multistart_neighbourhood_checker(num_variables, num_clauses, clauses, variab
     
         print(f"Evaluations so far: {function_counter}")
         print(f"Clauses to satisfy: {num_clauses}")
-        print(f"Most clauses satisfied so far:¨ {best_multistart_clauses}")
+        print(f"Most clauses satisfied so far: {best_multistart_clauses}")
         print(f"Previous best number of satisfied clauses: {current_best_satisfied_clauses}")
         print(f"Current most satisfying possibility: {best_solution}")
         print(f"The first possibility was: {first_possibility}")
