@@ -1,0 +1,149 @@
+Solution
+"[True, False, True, False, False, False, True, False, True, False, True, True, False, False, False, True, False, True, True, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,51,0.0009648799896240234
+ 
+Solution
+"[True, False, True, True, False, True, False, False, False, True, True, False, True, True, False, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,59,0.0009980201721191406
+ 
+Solution
+"[True, True, False, True, False, False, True, True, False, True, False, True, False, True, False, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,64,0.0009758472442626953
+ 
+Solution
+"[False, False, True, False, False, True, False, False, True, True, False, True, True, False, False, False, True, False, True, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+88,40,0.0
+ 
+Solution
+"[True, False, True, False, False, True, False, False, True, False, True, True, False, True, False, False, True, True, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,42,0.0
+ 
+Solution
+"[True, False, False, False, False, True, True, False, True, False, False, True, False, False, False, True, True, False, True, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+88,63,0.0009965896606445312
+ 
+Solution
+"[False, True, True, False, False, True, False, False, False, True, True, False, False, True, False, False, True, True, True, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,43,0.0009970664978027344
+ 
+Solution
+"[True, False, True, True, True, True, False, False, False, False, True, True, False, True, False, False, False, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,57,0.0
+ 
+Solution
+"[True, False, False, True, False, True, False, False, False, False, False, False, True, True, True, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+91,59,0.0
+ 
+Solution
+"[True, False, True, True, False, False, True, True, False, True, False, True, True, False, True, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,69,0.0009963512420654297
+ 
+Solution
+"[True, False, False, True, False, False, False, True, False, True, False, False, True, True, True, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+91,66,0.0009965896606445312
+ 
+Solution
+"[True, False, True, True, False, False, False, True, True, True, True, False, True, False, False, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+90,39,0.0009965896606445312
+ 
+Solution
+"[True, False, True, True, False, False, True, True, False, True, False, True, False, True, False, False, False, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,43,0.0
+ 
+Solution
+"[True, False, True, False, False, False, False, False, True, True, True, False, True, False, False, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,41,0.0009968280792236328
+ 
+Solution
+"[True, True, False, True, False, False, False, False, False, False, True, True, False, True, False, False, False, True, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+87,50,0.0009965896606445312
+ 
+Solution
+"[True, False, True, True, True, False, True, False, True, True, False, True, False, False, True, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+87,47,0.0
+ 
+Solution
+"[True, True, False, False, False, False, True, True, False, True, True, True, False, True, False, False, False, True, True, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,43,0.0009965896606445312
+ 
+Solution
+"[True, True, False, True, False, True, False, True, False, False, False, True, False, True, False, False, False, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+88,58,0.0009965896606445312
+ 
+Solution
+"[True, False, False, False, False, True, False, False, True, False, False, False, False, True, True, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+91,65,0.0009968280792236328
+ 
+Solution
+"[True, False, False, False, False, True, False, False, True, False, False, False, True, True, True, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+91,59,0.0
+ 
+Solution
+"[True, False, True, False, False, False, True, True, True, True, True, False, True, False, False, True, False, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+87,33,0.0
+ 
+Solution
+"[True, False, False, False, True, False, True, False, True, True, False, False, False, False, True, False, False, True, True, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+86,34,0.0
+ 
+Solution
+"[True, True, False, True, False, False, True, True, True, True, False, True, False, True, True, False, True, False, True, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+88,54,0.0
+ 
+Solution
+"[True, False, True, True, False, True, False, False, True, False, True, True, False, True, False, False, True, True, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,30,0.0009968280792236328
+ 
+Solution
+"[True, False, True, True, False, False, True, True, False, True, True, True, True, True, False, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,42,0.0
+ 
+Solution
+"[True, False, False, True, False, True, True, False, False, True, False, True, True, True, False, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+88,43,0.0009965896606445312
+ 
+Solution
+"[True, True, True, False, False, True, False, False, False, False, True, True, False, True, False, False, True, True, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,70,0.0009965896606445312
+ 
+Solution
+"[True, False, True, False, False, False, True, True, True, True, True, True, True, False, False, True, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+89,41,0.0009970664978027344
+ 
+Solution
+"[True, True, True, True, False, False, False, True, False, True, True, True, False, True, False, False, True, True, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+90,32,0.0
+ 
+Solution
+"[True, True, True, True, False, False, False, False, False, True, False, False, True, True, True, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+90,55,0.0009968280792236328

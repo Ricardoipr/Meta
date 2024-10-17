@@ -1,0 +1,4 @@
+ Best Solution
+"[False, True, True, True, False, False, False, True, True, True, True, False, False, True, True, False, True, True, True, True]"
+Most Clauses Satisfied,Most Function Evaluations,Time (seconds),Average time per restart (seconds)
+91,99,0.0009975433349609375,0.0009975433349609375

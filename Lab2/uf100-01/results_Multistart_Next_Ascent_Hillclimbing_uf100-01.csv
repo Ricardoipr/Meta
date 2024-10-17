@@ -1,0 +1,9 @@
+Solution number 1
+"[True, False, False, False, True, False, True, False, True, False, True, False, True, True, True, False, False, False, False, True, True, False, False, True, True, False, False, True, True, False, False, True, True, False, True, True, False, False, True, True, False, True, True, True, True, True, True, False, True, True, True, True, False, False, False, True, False, True, True, True, False, True, True, True, True, True, True, True, True, False, True, True, False, False, True, False, True, True, True, True, False, False, True, True, True, False, True, False, False, False, False, True, False, False, True, False, True, True, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+428,10000227,541.5773189067841
+ 
+Solution number 2
+"[False, False, False, True, True, False, True, True, True, True, True, False, False, True, True, True, False, True, False, True, False, True, True, False, False, True, False, False, True, True, False, False, True, False, True, True, False, False, True, True, True, False, True, True, True, True, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, True, False, False, True, True, True, True, True, False, True, False, False, True, True, False, True, False, True, False, True, False, True, False, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+428,10000395,538.9566824436188
