@@ -1,4 +1,0 @@
-Best Solution
-"[False, False, False, True, True, False, False, True, True, False, True, False, False, True, False, True, False, True, False, False, False, False, False, True, True, True, False, False, True, True, False, True, True, False, False, True, True, False, False, True, False, False, True, False, True, True, False, False, True, True, True, False, True, True, False, False, False, True, True, True, False, False, False, True, False, False, False, True, True, False, True, True, False, True, False, False, False, False, False, True, False, False, False, True, False, False, False, False, False, False, False, False, False, False, True, True, True, False, True, False]"
-Most Clauses Satisfied,Most Function Evaluations,Time (seconds),Average time per restart (seconds)
-429,5827703,0.057129621505737305,0.041614813799483896

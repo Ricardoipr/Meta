@@ -1,0 +1,150 @@
+ 
+Solution number 1
+"[True, True, True, False, False, True, False, True, False, True, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, False, True, False, False, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, False, False, False, True, True, True, False, False, True, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,1477302,68.52160859107971
+ 
+Solution number 2
+"[True, True, True, False, False, True, False, True, False, True, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, True, True, False, True, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, False, True, False, True, False, True, False, False, True, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,4127164,191.41430282592773
+ 
+Solution number 3
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, False, True, False, False, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, False, True, False, False, True, True, False, False, False, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,1014755,47.023606061935425
+ 
+Solution number 4
+"[True, True, True, False, False, True, False, True, False, True, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, False, True, False, False, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, False, True, False, True, True, True, False, False, True, True, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,1950945,90.35676670074463
+ 
+Solution number 5
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, False, True, False, True, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, False, True, False, False, False, True, False, False, True, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,2823756,130.4685823917389
+ 
+Solution number 6
+"[True, True, True, False, False, True, False, True, False, True, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, True, True, False, False, True, False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, False, False, True, True, False, False, False, True, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,2101662,97.41453719139099
+ 
+Solution number 7
+"[True, True, True, True, True, True, False, True, False, False, True, False, False, True, False, True, True, True, False, False, False, True, False, False, True, True, True, False, False, True, True, True, True, True, False, False, True, False, False, False, True, True, True, False, False, True, True, False, True, False, True, False, False, True, True, True, False, False, True, True, False, True, False, False, False, False, True, False, False, True, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+324,10000285,464.5871868133545
+ 
+Solution number 8
+"[True, True, True, False, False, True, False, True, False, True, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, False, True, False, False, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, True, True, False, True, False, True, False, False, True, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,3859176,178.3146948814392
+ 
+Solution number 9
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, False, False, False, True, False, False, True, False, True, False, True, False, True, False, False, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, False, False, False, True, False, True, False, False, True, False, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,2451561,113.50178933143616
+ 
+Solution number 10
+"[True, True, False, True, False, False, False, True, False, True, False, False, False, False, False, False, True, True, False, False, False, True, True, False, True, True, True, True, False, False, True, False, False, True, False, False, True, False, True, False, True, True, True, False, False, False, False, True, True, True, True, False, True, False, False, True, True, False, True, True, True, True, True, False, False, True, False, False, False, False, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+324,10000227,462.21202754974365
+ 
+Solution number 11
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, False, False, True, True, True, False, False, False, True, True, False, True, True, True, False, False, True, True, False, False, True, False, False, True, False, True, True, True, True, True, True, False, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, True, True, False, False, False, True, False, False, True, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+324,10000363,459.744722366333
+ 
+Solution number 12
+"[False, False, True, False, False, True, True, True, True, False, False, True, False, False, False, True, False, False, True, True, False, True, False, False, True, True, True, True, True, True, True, False, True, True, True, True, True, True, False, False, True, True, False, False, True, True, True, True, True, False, True, False, False, False, True, True, True, False, False, True, True, True, True, True, False, False, True, False, False, True, True, False, True, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+324,10000265,459.71769094467163
+ 
+Solution number 13
+"[True, True, True, False, False, True, False, True, False, True, True, False, False, True, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, True, True, False, False, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, True, False, False, False, True, True, False, False, True, True, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,7016386,321.9069941043854
+ 
+Solution number 14
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, False, True, False, True, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, True, False, False, True, True, True, False, False, True, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,3647616,167.35228610038757
+ 
+Solution number 15
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, True, True, False, True, True, False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, False, False, False, True, True, False, False, False, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,1431244,65.53664469718933
+ 
+Solution number 16
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, True, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, True, True, False, True, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, True, False, False, True, True, True, False, False, True, True, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,1253755,57.29925203323364
+ 
+Solution number 17
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, True, True, False, True, True, False, True, True, True, True, False, True, True, False, True, False, False, True, True, True, True, True, False, False, True, True, False, False, False, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,2394956,109.85460615158081
+ 
+Solution number 18
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, True, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, False, True, False, False, True, False, True, True, True, True, False, True, True, False, True, False, False, True, True, True, True, False, False, True, True, True, False, False, True, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,1476282,67.7584445476532
+ 
+Solution number 19
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, True, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, True, True, False, True, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, True, False, False, True, True, True, False, False, True, True, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,1174516,53.8358256816864
+ 
+Solution number 20
+"[True, True, True, False, False, True, False, True, False, True, True, False, False, True, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, True, True, False, False, True, False, True, True, True, True, False, True, True, False, True, False, False, True, True, True, True, False, False, False, True, True, False, False, True, True, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,3336175,152.91141629219055
+ 
+Solution number 21
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, False, True, False, False, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, False, False, False, True, True, True, False, False, True, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,350641,16.030012369155884
+ 
+Solution number 22
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, True, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, True, True, False, False, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, True, True, False, True, True, True, False, False, True, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,751664,34.46040916442871
+ 
+Solution number 23
+"[True, True, True, False, False, True, False, True, False, True, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, False, True, False, False, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, False, True, False, False, True, True, False, False, False, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,5407741,247.9845416545868
+ 
+Solution number 24
+"[True, True, True, False, False, True, False, True, False, True, True, False, False, True, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, True, True, False, False, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, True, False, False, False, True, True, False, False, True, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,9388558,431.53655791282654
+ 
+Solution number 25
+"[True, True, True, False, False, True, False, True, False, True, True, False, False, True, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, True, True, False, False, True, False, True, True, True, True, False, True, True, False, True, False, False, True, True, True, True, False, False, True, True, True, False, False, True, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,3622733,166.37070536613464
+ 
+Solution number 26
+"[True, True, True, False, True, True, False, True, False, True, True, False, False, False, False, True, True, True, True, False, False, True, False, False, True, True, True, False, False, True, True, True, True, True, False, False, True, True, False, False, True, True, True, False, False, True, True, False, False, False, True, False, True, True, True, True, False, True, True, True, False, False, False, False, False, False, True, False, False, False, True, True, False, False, True]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+324,10000123,458.82275199890137
+ 
+Solution number 27
+"[True, True, True, False, False, True, False, True, False, True, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, True, True, False, False, True, False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, False, False, False, True, True, False, False, False, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,2286649,104.896324634552
+ 
+Solution number 28
+"[True, True, True, False, False, True, False, True, False, True, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, False, True, False, True, True, False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, False, False, True, True, False, False, False, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,6701445,310.2542848587036
+ 
+Solution number 29
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, False, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, True, True, False, True, True, False, True, True, True, True, False, True, True, False, True, False, False, True, True, True, True, True, False, True, True, True, False, False, True, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,5081774,238.53952479362488
+ 
+Solution number 30
+"[True, True, True, False, False, True, False, True, False, False, True, False, False, True, False, True, True, False, False, False, False, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, False, True, False, True, True, False, True, True, False, True, False, True, True, False, True, False, False, True, True, True, True, False, False, True, False, True, False, False, True, False, True, False, False, False]"
+Clauses Satisfied,Function Evaluations,Time (seconds)
+325,3428813,159.33927416801453
