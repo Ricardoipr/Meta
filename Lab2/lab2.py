@@ -73,9 +73,7 @@ def hillclimb(num_variables, clauses, variable_neighbourhood):
     continues improving until no better neighbor is found.
     """
     current_possibility = [random.choice([0,1]) for _ in range(num_variables)]
-    first_possibility = current_possibility
     function_evaluations = 0
-    start_time = time.time()
     satisfied_clauses = clause_counter(current_possibility, clauses)
     max_hamming_distance = 3 if variable_neighbourhood else 1
     hamming_distance = 1
@@ -83,12 +81,19 @@ def hillclimb(num_variables, clauses, variable_neighbourhood):
     while True:
         improved = False
 
+        # Iterates through the hamming distance.
+        # Randomly shuffles the order of the variables and then shuffles the indexes of the variables.
         for hamming_distance in range(1, max_hamming_distance + 1):
-            order = random.sample(range(num_variables), num_variables)
+            order = list(range(num_variables))
+            random.shuffle(order)
+            all_combinations = list(combinations(order, hamming_distance))
+            random.shuffle(all_combinations)
 
-            for indexes in random.sample(list(combinations(order, hamming_distance)), len(order)):
+            # Iterates through the indexes of the variables.
+            for indexes in all_combinations:
                 neighbour_possibility = current_possibility.copy()
 
+                # Flip the variables at the indexes.
                 for index in indexes:
                     neighbour_possibility[index] = 1 - current_possibility[index]
                 
@@ -102,12 +107,13 @@ def hillclimb(num_variables, clauses, variable_neighbourhood):
                     break
 
             if improved:
+                hamming_distance = 1
                 break
 
         if not improved:
             break
 
-    return current_possibility, satisfied_clauses, function_evaluations, time.time()-start_time, first_possibility
+    return current_possibility, satisfied_clauses, function_evaluations
 
 def neighbourhood_checker(num_variables, clauses, variable_neighbourhood, multistart):
     """
@@ -115,20 +121,18 @@ def neighbourhood_checker(num_variables, clauses, variable_neighbourhood, multis
     """
     best_clauses = 0
     best_function_evaluations = 0
-    best_time = 0
     best_solution = []
     max_runs = 1 if not multistart else 30
 
     for _ in range(max_runs):
-        current_solution, satisfied_clauses, function_evaluations, cpu_time, first_possibility = hillclimb(num_variables, clauses, variable_neighbourhood)
+        current_solution, satisfied_clauses, function_evaluations = hillclimb(num_variables, clauses, variable_neighbourhood)
         
         if satisfied_clauses > best_clauses:
             best_clauses = satisfied_clauses
             best_function_evaluations = function_evaluations
             best_solution = current_solution
-            best_time = cpu_time
 
-    return best_solution, best_clauses, best_function_evaluations, best_time, first_possibility
+    return best_solution, best_clauses, best_function_evaluations
 
 def multistart_neighbourhood_checker(num_variables, num_clauses, clauses, variable_neighbourhood, multistart):
     """
@@ -137,38 +141,22 @@ def multistart_neighbourhood_checker(num_variables, num_clauses, clauses, variab
     function_counter = 0
     best_multistart_clauses = 0
     best_function_evaluations = 0
-    best_time = 0
     best_solution = []
-    total_time = 0
-    restart_count = 0
 
     while function_counter <= max_evaluations:
-        current_best_solution, current_best_satisfied_clauses, current_best_function_evaluations, current_best_cpu_time, first_possibility = neighbourhood_checker(num_variables, clauses, variable_neighbourhood, multistart)
-        total_time += current_best_cpu_time
-        restart_count += 1
+        current_best_solution, current_best_satisfied_clauses, current_best_function_evaluations = neighbourhood_checker(num_variables, clauses, variable_neighbourhood, multistart)
 
         if current_best_satisfied_clauses > best_multistart_clauses:
             best_multistart_clauses = current_best_satisfied_clauses
             best_function_evaluations = function_counter + current_best_function_evaluations
             best_solution = current_best_solution
-            best_time = current_best_cpu_time
 
         function_counter += current_best_function_evaluations
 
         if best_multistart_clauses == num_clauses :
             break
-    
-        print(f"Evaluations so far: {function_counter}")
-        print(f"Clauses to satisfy: {num_clauses}")
-        print(f"Most clauses satisfied so far:¨ {best_multistart_clauses}")
-        print(f"Previous best number of satisfied clauses: {current_best_satisfied_clauses}")
-        print(f"Current most satisfying possibility: {best_solution}")
-        print(f"The first possibility was: {first_possibility}")
-        print("----------------------------")
-
-    avg_time_per_restart = total_time / restart_count if restart_count > 0 else 0
             
-    return best_solution, best_multistart_clauses, best_function_evaluations, best_time, avg_time_per_restart
+    return best_solution, best_multistart_clauses, best_function_evaluations
 
 def convert_to_boolean(assignment):
     """
@@ -190,31 +178,52 @@ def main():
         if option == 'A':
             variable_neighbourhood = False
             multistart = False
-            best_solution, best_clauses, best_function_evaluations, best_time, test = neighbourhood_checker(num_variables, clauses, variable_neighbourhood, multistart)
+            start_time = time.time()
+            best_solution, best_clauses, best_function_evaluations = neighbourhood_checker(num_variables, clauses, variable_neighbourhood, multistart)
+            best_time = time.time() - start_time
+            boolean_result = convert_to_boolean(best_solution)
+            print(f"The best solution found was: {boolean_result}")
+            print(f"Satisfying {best_clauses} clauses")
+            print(f"Taking {best_function_evaluations} function evaluations")
+            print(f"Taking {best_time} seconds.")
         
         elif option == 'B':
             variable_neighbourhood = False
             multistart = True
-            best_solution, best_clauses, best_function_evaluations, best_time, avg_time_per_restart = multistart_neighbourhood_checker(num_variables, num_clauses, clauses, variable_neighbourhood, multistart)
+            for _ in range(max_runs):
+                start_time = time.time()
+                best_solution, best_clauses, best_function_evaluations = multistart_neighbourhood_checker(num_variables, num_clauses, clauses, variable_neighbourhood, multistart)
+                best_time = time.time() - start_time
+                boolean_result = convert_to_boolean(best_solution)
+                print(f"The best solution found was: {boolean_result}")
+                print(f"Satisfying {best_clauses} clauses")
+                print(f"Taking {best_function_evaluations} function evaluations")
+                print(f"Taking {best_time} seconds.")
 
         elif option == 'C':
             variable_neighbourhood = True
             multistart = False
-            best_solution, best_clauses, best_function_evaluations, best_time, test = neighbourhood_checker(num_variables, clauses, variable_neighbourhood, multistart)
+            start_time = time.time()
+            best_solution, best_clauses, best_function_evaluations = neighbourhood_checker(num_variables, clauses, variable_neighbourhood, multistart)
+            best_time = time.time() - start_time
+            boolean_result = convert_to_boolean(best_solution)
+            print(f"The best solution found was: {boolean_result}")
+            print(f"Satisfying {best_clauses} clauses")
+            print(f"Taking {best_function_evaluations} function evaluations")
+            print(f"Taking {best_time} seconds.")
 
         elif option == 'D':
             variable_neighbourhood = True
             multistart = True
-            best_solution, best_clauses, best_function_evaluations, best_time, avg_time_per_restart= multistart_neighbourhood_checker(num_variables, num_clauses, clauses, variable_neighbourhood, multistart)
-        
-        boolean_result = convert_to_boolean(best_solution)
-        print(f"The best solution found was: {boolean_result}")
-        print(f"Satisfying {best_clauses} clauses")
-        print(f"Taking {best_function_evaluations} function evaluations")
-        print(f"Taking {best_time} seconds.")
-
-        if option == 'B' or option == 'D':
-            print(f"And with an average time per restart of: {avg_time_per_restart}")
+            for _ in range(max_runs):
+                start_time = time.time()
+                best_solution, best_clauses, best_function_evaluations = multistart_neighbourhood_checker(num_variables, num_clauses, clauses, variable_neighbourhood, multistart)
+                best_time = time.time() - start_time
+                boolean_result = convert_to_boolean(best_solution)
+                print(f"The best solution found was: {boolean_result}")
+                print(f"Satisfying {best_clauses} clauses")
+                print(f"Taking {best_function_evaluations} function evaluations")
+                print(f"Taking {best_time} seconds.")
 
 if __name__ == "__main__":
     main()
