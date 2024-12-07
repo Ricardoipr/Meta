@@ -77,6 +77,7 @@ def hillclimb(num_variables, clauses, variable_neighbourhood):
     satisfied_clauses = clause_counter(current_possibility, clauses)
     max_hamming_distance = 3 if variable_neighbourhood else 1
     hamming_distance = 1
+    print("--New Sample--")
 
     while True:
         improved = False
@@ -86,6 +87,8 @@ def hillclimb(num_variables, clauses, variable_neighbourhood):
         for hamming_distance in range(1, max_hamming_distance + 1):
             order = list(range(num_variables))
             random.shuffle(order)
+
+            # Generates all possible combinations of the indexes of the variables.
             all_combinations = list(combinations(order, hamming_distance))
             random.shuffle(all_combinations)
 
