@@ -4,6 +4,7 @@ import time
 
 max_runs = 30
 max_evaluations = 10000000
+tabu_tenure = 15
 
 def read_cnf_file(filename):
     """
